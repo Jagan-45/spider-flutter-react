@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import "./App.css"
 
 const FlutterWrapper = () => {
   const flutterContainerRef = useRef(null);
@@ -74,9 +75,9 @@ const FlutterWrapper = () => {
 
 
 return (
-    <div>
+    <div className="min-h-screen w-full bg-red">
         {/* <div className="bg-blue-400 h-32">Header</div> */}
-        <iframe src="\flutter\web\index.html" width="683%" height="960vh"></iframe>
+        <iframe src="http://192.168.10.10:8080/index.html" width="640%" height="940vh"></iframe>
         {/* <iframe src="http://localhost:51465/" width="683%" height="960vh"></iframe> */}
     </div>
 )
