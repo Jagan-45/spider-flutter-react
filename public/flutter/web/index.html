@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Zen Spider - Stock visualization tool">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,28 +18,35 @@
   <title>Zen Spider</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- Flutter bootstrap script -->
+  <style>
+    /* Add these styles to ensure proper rendering on web */
+    .flutter-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+    }
+  </style>
+
   <script src="flutter_bootstrap.js"></script>
-  
-  <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
-  
-  <!-- Custom initialization script -->
   <script src="main.js" defer></script>
 </head>
 <body>
   <script>
-    // Define serviceWorkerVersion - this will be replaced by the Flutter build process
-    // with the actual version in production builds
-    const serviceWorkerVersion = "1459043867";
+    const serviceWorkerVersion = "3126531433";
     
     window.addEventListener('load', function(ev) {
-      // Initialize Flutter
       _flutter = _flutter || {};
       _flutter.loader = _flutter.loader || {};
       
       var loading = document.createElement('div');
-      loading.id = 'loading-indicator'; // Add an ID for reliable reference
+      loading.id = 'loading-indicator';
       loading.innerHTML = 'Loading...';
       loading.style.position = 'fixed';
       loading.style.top = '50%';
@@ -62,25 +54,21 @@
       loading.style.transform = 'translate(-50%, -50%)';
       document.body.appendChild(loading);
       
-      // Load the Flutter engine
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: async function(engineInitializer) {
-          // Initialize the Flutter engine
           let appRunner = await engineInitializer.initializeEngine({
-            // Optional parameters can be provided here
+            useColorEmoji: true,
           });
           
-          // Safe removal of loading indicator
           const loadingIndicator = document.getElementById('loading-indicator');
           if (loadingIndicator) {
             loadingIndicator.remove();
           }
           
-          // Run the app
-          await appRunner.runApp();
+          appRunner.runApp();
         }
       });
     });
