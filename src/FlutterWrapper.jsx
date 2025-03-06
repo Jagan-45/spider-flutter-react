@@ -77,13 +77,13 @@ const FlutterWrapper = () => {
 return (
     <div className="min-h-screen w-full bg-red">
         {/* <div className="bg-blue-400 h-32">Header</div> */}
-<<<<<<< HEAD
+
         // <iframe src="http://192.168.10.10:8080/index.html" width="640%" height="940vh"></iframe>
         // {/* <iframe src="http://localhost:51465/" width="683%" height="960vh"></iframe> */}
-=======
+
         {/* <iframe src="\flutter\web\index.html" width="783%" height="960vh"></iframe> */}
         <iframe src="http://localhost:52079/" width="683%" height="960vh"></iframe>
->>>>>>> 0163bf7537a4f5a78a21459758bf26421b7de760
+
     </div>
 )
 };
