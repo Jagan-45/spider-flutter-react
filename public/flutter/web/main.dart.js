@@ -80240,7 +80240,7 @@ agt(){return this.nj(null)},
 agu(a){var s=0,r=A.W(t.b5),q,p=2,o=[],n=this,m,l,k,j,i,h,g,f
 var $async$nj=A.R(function(b,c){if(b===1){o.push(c)
 s=p}while(true)switch(s){case 0:p=4
-j=A.fR("http://192.168.10.10:9195/getConstituents")
+j=A.fR("http://192.168.20.17:9190/getConstituents")
 i=t.N
 h=A.M(["Content-Type","application/json"],i,i)
 s=7
@@ -82126,7 +82126,7 @@ var $async$v1=A.R(function(a,b){if(a===1){o.push(b)
 s=p}while(true)switch(s){case 0:p=4
 i=t.N
 s=7
-return A.a0(n.a.ab2("GET",A.fR("http://192.168.10.10:9195/getGraphIndices"),A.M(["Accept","application/json"],i,i)),$async$v1)
+return A.a0(n.a.ab2("GET",A.fR("http://192.168.20.17:9190/getGraphIndices"),A.M(["Accept","application/json"],i,i)),$async$v1)
 case 7:m=b
 if(m.b===200){i=m
 l=B.ct.fb(0,A.aA5(A.az8(i.e).c.a.i(0,"charset")).fb(0,i.w))
