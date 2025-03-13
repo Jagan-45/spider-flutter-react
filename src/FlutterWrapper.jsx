@@ -58,7 +58,7 @@ const FlutterWrapper = () => {
     const handleMessage = (event) => {
       //  console.log("hi",event.origin)
       //  console.log(event.origin==="http://localhost:51465")
-       if (event.origin === "http://localhost:52079") {
+       if (event.origin === "http://localhost:64996") {
         console.log("inside the block");
         alert(event.data);
        }
@@ -74,18 +74,34 @@ const FlutterWrapper = () => {
   }, []);
 
 
-return (
-    <div className="min-h-screen w-full bg-red">
-        {/* <div className="bg-blue-400 h-32">Header</div> */}
-
-        // <iframe src="http://192.168.10.10:8080/index.html" width="640%" height="940vh"></iframe>
-        // {/* <iframe src="http://localhost:51465/" width="683%" height="960vh"></iframe> */}
-
-        {/* <iframe src="\flutter\web\index.html" width="783%" height="960vh"></iframe> */}
-        <iframe src="http://localhost:52079/" width="683%" height="960vh"></iframe>
-
+  return (
+    <div class="flex h-screen w-screen">
+      
+      <nav class="w-64 bg-gray-900 text-white p-4 h-screen">
+        <h2 class="text-xl font-bold">Features</h2>
+        <ul>
+          <li class="py-2 cursor-pointer">Graph</li>
+          <li class="py-2 cursor-pointer">Other Feature</li>
+        </ul>
+      </nav>
+  
+      <div class="flex flex-col flex-1">
+        
+        <header class="h-16 bg-gray-800 text-white flex items-center p-4">
+          <h1 class="text-lg font-semibold">Graph Visualization</h1>
+        </header>
+  
+     
+        <div class="relative flex-1 min-h-[300px] transition-all duration-300 ease-in-out">
+          <iframe 
+            class="absolute w-full h-full will-change-transform"
+            src="http://localhost:64996/index.html"
+            frameborder="0">
+          </iframe>
+        </div>
+      </div>
     </div>
-)
+  );
 };
 // import React, { useEffect, useRef } from "react";
 
