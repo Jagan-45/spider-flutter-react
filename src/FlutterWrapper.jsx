@@ -54,25 +54,32 @@ const FlutterWrapper = () => {
 
 
   
-  useEffect(() => {
-    const handleMessage = (event) => {
-      //  console.log("hi",event.origin)
-      //  console.log(event.origin==="http://localhost:51465")
-       if (event.origin === "http://localhost:64996") {
-        console.log("inside the block");
-        alert(event.data);
-       }
-      }
+  useEffect(()=>{
+    const handleMessageFromSpider=(event)=>{
+      console.log(event)
+      if(event.origin==="http://localhost:54463"){
+        const data=event.data.split(" ")
+        const action=data[0]
+        const stock=data[1]
+        console.log(action)
+        if(action==="BUY"){
+         alert(data)
+        } else {
+          alert(data)
+        }
         
+      }
+    }
 
-    window.addEventListener("message", handleMessage);
-
-    
-    return () => {
-      window.removeEventListener("message", handleMessage);
-    };
-  }, []);
-
+    window.addEventListener("SELL",(event)=>{
+      console.log(event)
+    })
+   
+     window.addEventListener("message",handleMessageFromSpider);
+    return ()=>{
+     window.removeEventListener("message",handleMessageFromSpider)
+    }
+  },[])
 
   return (
     <div class="flex h-screen w-screen">
@@ -95,7 +102,7 @@ const FlutterWrapper = () => {
         <div class="relative flex-1 min-h-[300px] transition-all duration-300 ease-in-out">
           <iframe 
             class="absolute w-full h-full will-change-transform"
-            src="http://localhost:64996/index.html"
+            src="http://localhost:54463/index.html"
             frameborder="0">
           </iframe>
         </div>
