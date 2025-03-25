@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Zen Spider - Stock visualization tool">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="zen_spider">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Zen Spider</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Add these styles to ensure proper rendering on web */
+    .flutter-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+    }
+  </style>
+
+  <script src="flutter_bootstrap.js"></script>
+  <script src="flutter.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <script>
+    const serviceWorkerVersion = "4291864394";
+    
+    window.addEventListener('load', function(ev) {
+      _flutter = _flutter || {};
+      _flutter.loader = _flutter.loader || {};
+      
+      var loading = document.createElement('div');
+      loading.id = 'loading-indicator';
+      loading.innerHTML = 'Loading...';
+      loading.style.position = 'fixed';
+      loading.style.top = '50%';
+      loading.style.left = '50%';
+      loading.style.transform = 'translate(-50%, -50%)';
+      document.body.appendChild(loading);
+      
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: async function(engineInitializer) {
+          let appRunner = await engineInitializer.initializeEngine({
+            useColorEmoji: true,
+          });
+          
+          const loadingIndicator = document.getElementById('loading-indicator');
+          if (loadingIndicator) {
+            loadingIndicator.remove();
+          }
+          
+          appRunner.runApp();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
