@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./App.css"
+import config from "../config";
 
 const FlutterWrapper = () => {
   const flutterContainerRef = useRef(null);
@@ -57,18 +58,7 @@ const FlutterWrapper = () => {
   useEffect(()=>{
     const handleMessageFromSpider=(event)=>{
       console.log(event)
-      if(event.origin==="http://localhost:54463"){
-        const data=event.data.split(" ")
-        const action=data[0]
-        const stock=data[1]
-        console.log(action)
-        if(action==="BUY"){
-         alert(data)
-        } else {
-          alert(data)
-        }
-        
-      }
+      
     }
 
     window.addEventListener("SELL",(event)=>{
@@ -102,7 +92,7 @@ const FlutterWrapper = () => {
         <div class="relative flex-1 min-h-[300px] transition-all duration-300 ease-in-out">
           <iframe 
             class="absolute w-full h-full will-change-transform"
-            src="http://localhost:54463/index.html"
+            src={config.SPIDER_URL+config.key}
             frameborder="0">
           </iframe>
         </div>
