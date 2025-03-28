@@ -79353,14 +79353,14 @@ Cb(a,b){return this.a6w(a,b)},
 a6w(a,b){var s=0,r=A.V(t.H),q
 var $async$Cb=A.R(function(c,d){if(c===1)return A.S(d,r)
 while(true)switch(s){case 0:q=A.axG(window.parent)
-if(q!=null)J.asB(q,"BUY "+a.a+","+A.m(a.b)+","+a.c,"*")
+if(q!=null)J.asB(q,"BUY,"+a.a+","+A.m(a.b)+","+a.c,"*")
 return A.T(null,r)}})
 return A.U($async$Cb,r)},
 Cg(a,b){return this.a7a(a,b)},
 a7a(a,b){var s=0,r=A.V(t.H),q
 var $async$Cg=A.R(function(c,d){if(c===1)return A.S(d,r)
 while(true)switch(s){case 0:q=A.axG(window.parent)
-if(q!=null)J.asB(q,"SELL "+a.a+","+A.m(a.b)+","+a.c,"*")
+if(q!=null)J.asB(q,"SELL,"+a.a+","+A.m(a.b)+","+a.c,"*")
 return A.T(null,r)}})
 return A.U($async$Cg,r)},
 Cj(a,b){return this.a7w(a,b)},

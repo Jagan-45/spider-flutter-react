@@ -57,7 +57,10 @@ const FlutterWrapper = () => {
   
   useEffect(()=>{
     const handleMessageFromSpider=(event)=>{
-      console.log(event)
+      if(event.origin!=window.location.origin){
+        const data = event.data.trim().split(',');
+        console.log(data)
+      }
       
     }
 
@@ -92,7 +95,7 @@ const FlutterWrapper = () => {
         <div class="relative flex-1 min-h-[300px] transition-all duration-300 ease-in-out">
           <iframe 
             class="absolute w-full h-full will-change-transform"
-            src={config.SPIDER_URL+config.key}
+            src={config.SPIDER_URL}
             frameborder="0">
           </iframe>
         </div>
